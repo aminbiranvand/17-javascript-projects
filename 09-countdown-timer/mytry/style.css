@@ -1,0 +1,53 @@
+body {
+  background-color: tomato;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  width: 900px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs input {
+  background-color: beige;
+  padding: 5px 10px;
+  border: none;
+}
+
+label {
+  margin-top: 5px;
+}
+
+.outputs {
+}
+
+#startBtn {
+  margin-top: 20px;
+  background-color: aquamarine;
+  color: aliceblue;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+#startBtn:hover {
+  background-color: yellowgreen;
+  color: brown;
+  font-size: 30px;
+}
+
+.outputs div {
+  border: 2px solid black;
+  margin: 3px;
+  padding: 10px 5px;
+  text-align: center;
+  width: 100px;
+}

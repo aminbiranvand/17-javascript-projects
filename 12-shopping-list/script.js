@@ -5,7 +5,7 @@ class ShoppingList {
         this.newItemTextElement = document.querySelector(newItemTextSelector);
         this.storageKey = storageKey;
         this.items = JSON.parse(localStorage.getItem(storageKey)) || ['apples', 'oranges'];
-   
+    
         this.initialise();
     }
 

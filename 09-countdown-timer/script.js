@@ -14,6 +14,7 @@ let timerInterval;
 const updateTimer = () => {
     if (targetTime) {
         const differenceInSeconds = Math.floor(targetTime - Date.now()) / 1000;
+        console.log(differenceInSeconds)
         if (differenceInSeconds < 1) {
             clearInterval(timerInterval);
         }
@@ -44,6 +45,7 @@ startTimerButtonElement.addEventListener('click', () => {
     date.setSeconds(currentSeconds + futureSeconds);
 
     targetTime = date.getTime();
+    console.log(targetTime,'22')
     localStorage.setItem('targetTime', targetTime);
     updateTimer();
     timerInterval = setInterval(updateTimer, 500);
@@ -55,5 +57,5 @@ const storedTargetTime = localStorage.getItem('targetTime');
 if (storedTargetTime) {
     targetTime = storedTargetTime;
     updateTimer();
-    timerInterval = setInterval(updateTimer, 500);
+    timerInterval = setInterval(updateTimer, 1000);
 }

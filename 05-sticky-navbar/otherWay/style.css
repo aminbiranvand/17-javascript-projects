@@ -24,12 +24,18 @@ body {
 }
 
 #touches a {
-  text-decoration: none
+  text-decoration: none;
   color: aliceblue;
   max-width: fit-content;
   padding: 6px;
   border-radius: 4px;
   margin: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
 }
 
 a:active {
@@ -38,8 +44,8 @@ a:active {
   max-width: 60px;
 }
 
-
-.ac{
-  
-background-color: red;
+.ac {
+  color: white;
+  background-color: rgb(9, 92, 68);
+  font-size: 25px;
 }
