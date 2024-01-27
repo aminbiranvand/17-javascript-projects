@@ -1,13 +1,12 @@
-
 const getLoremIpsum = numberOfParagraphs => {
     fetch(`https://baconipsum.com/api/?type=meat-and-filler&paras=${numberOfParagraphs}`)
         .then(response => response.json())
         .then(loremIpsumTextArray => {
             updateResult(loremIpsumTextArray);
         })
-        .catch(error => {
-            showError(error);
-        });
+        // .catch(error => {
+        //     showError(error);
+        // });
 };
 
 const updateResult = textArray => {
@@ -20,12 +19,12 @@ const updateResult = textArray => {
     addCopyButton(textArray.join(''));
 };
 
-const showError = error => {
-    resultElement.classList.add('show');
-    const resultElement = document.getElementById('result');
-    resultElement.innerHTML = '';
-    resultElement.innerHTML = `<p class="error">${error.message}</p>`
-}
+// const showError = error => {
+//     resultElement.classList.add('show');
+//     const resultElement = document.getElementById('result');
+//     resultElement.innerHTML = '';
+//     resultElement.innerHTML = `<p class="error">${error.message}</p>`
+// }
 
 const addCopyButton = text => {
     const resultElement = document.getElementById('result');

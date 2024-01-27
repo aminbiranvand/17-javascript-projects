@@ -1,0 +1,55 @@
+body{
+  background-color: rgb(73, 73, 153);
+}
+
+
+#showResult{
+  display: flex;
+
+}
+
+#container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.imgShow{
+  height: 50px;
+  width: 50px;
+}
+.ths{
+  padding: 5px 10px;
+  background-color: aqua;
+  
+}
+table{
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+table th{
+  border: 1px solid black;
+}
+
+.test{
+  background-color: aquamarine;
+  width: 30px;
+  height: 30px;
+}
+
+
+#result{
+  display: none;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px dashed black;
+
+}
+
+
+#result.show{
+  display: block;
+}
