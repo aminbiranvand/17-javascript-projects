@@ -1,56 +1,56 @@
-class show {
+class shopList {
   constructor() {
-    this.searchBox = document.getElementById("searchBox");
-    this.container = document.getElementById("container");
-    this.tableId=document.getElementById('tableId');
-    this.getDate=fetch('https://fakestoreapi.com/products')
-    .then(e=>e.json()).then(t=>this.createHeader(t));
+    this.searchId = document.getElementById("searchId");
+    this.h2Id = document.getElementById("h2Id");
+    this.tableId = document.getElementById("tableId");
+    this.containetId = document.getElementById("containerId");
+    fetch("https://fakestoreapi.com/products")
+      .then((e) => e.json())
+      .then((data) => this.createHeader(data));
   }
 
-  createHeader(date){
-    const tr=document.createElement('tr');
-    if(date){
-      const myThTitles=Object.keys(date[0]);
-      myThTitles.map(title=>{
-        const th=document.createElement('th');
-        th.innerText=title;
-        th.classList.add('ths')
-        tr.appendChild(th);
-      })
-    }
-    this.tableId.appendChild(tr);
-    this.makeDateTable(date);
-  }
-
-  makeDateTable(getDate){
-    console.log(getDate)
+createHeader(getDate) {
+const tr=document.createElement('tr');
 if(getDate){
-  getDate.map((date)=>{
-    const tr=document.createElement('tr');
-   Object.values(date).map((f,index)=>{
-    if(index==5){
-      const image=document.createElement('img');
-      image.src=f;
-      image.classList.add('imgShow');
-      tr.appendChild(image);
-    }
-
-    else if(index==6){
-      const td=document.createElement('td');
-      td.innerText=Object.values(f).join("");
-      tr.appendChild(td)
-    }
-else{
-  const td=document.createElement('td');
-  td.innerText=f;
-  tr.appendChild(td);
+    Object.keys(getDate[0]).forEach(headerTitle=>{
+    const th=document.createElement('th');
+    th.innerText=headerTitle;
+    tr.appendChild(th);
+    })
+    this.tableId.appendChild(tr)
+    this.creatBody(getDate);
 }
-   });
-   this.tableId.appendChild(tr);
-  })
-}
-  }
 }
 
-const myShow = new show();
-myShow.createHeader()
+creatBody(dateBody){
+    dateBody.forEach(t=>{
+        const tr=document.createElement('tr');
+        const x=Object.values(t);
+        x.forEach((data,index)=>{
+            if(index==5){
+             const td=document.createElement('td')
+             const image=document.createElement('img');
+             image.classList.add('img');
+             image.src=data;
+             td.appendChild(image)
+             tr.appendChild(td)
+            }
+
+            if(index==6){
+                const td=document.createElement('td');
+                td.textContent=data.rate;
+                tr.appendChild(td)
+                }
+
+if(index==0||index==1||index==2||index==3||index==4){
+    const td=document.createElement('td');
+    td.textContent=data;
+    tr.appendChild(td);
+}})
+    this.tableId.appendChild(tr)
+    })
+}}
+
+const myListShow = new shopList();
+
+
