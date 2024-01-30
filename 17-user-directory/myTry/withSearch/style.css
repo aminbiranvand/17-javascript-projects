@@ -12,6 +12,8 @@ body {
     height: 50px;
 }
 
+
+
 h2 {
   color: aliceblue;
   user-select: none;
@@ -49,7 +51,4 @@ td{
 }
 
 
-.findTitle{
-  background-color: blue;
-}
 
